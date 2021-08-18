@@ -1,4 +1,5 @@
  html {
+  scroll-behavior: smooth;
   min-height: 100%;
   display: flex;
 
@@ -27,6 +28,17 @@ body {
   radial-gradient(circle at 40vw 40vh,rgba(var(--g2),0.5) 0,rgba(var(--g2),0) 37vw),
   radial-gradient(circle at 60vw 25vh,rgb(var(--g1),0.5) 0,rgba(var(--g1),0) 32vw),
   radial-gradient(circle at 52vw 65vh,rgb(var(--g3),0.5) 0,rgba(var(--g3),0) 35vw),
+
+
+  radial-gradient(circle at 40vw 250vh,rgba(var(--g2),0.5) 0,rgba(var(--g2),0) 37vw),
+  radial-gradient(circle at 60vw 235vh,rgb(var(--g1),0.5) 0,rgba(var(--g1),0) 32vw),
+  radial-gradient(circle at 52vw 275vh,rgb(var(--g3),0.5) 0,rgba(var(--g3),0) 35vw),
+
+
+  radial-gradient(circle at 40vw 570vh,rgba(var(--g2),0.5) 0,rgba(var(--g2),0) 37vw),
+  radial-gradient(circle at 60vw 555vh,rgb(var(--g1),0.5) 0,rgba(var(--g1),0) 32vw),
+  radial-gradient(circle at 52vw 595vh,rgb(var(--g3),0.5) 0,rgba(var(--g3),0) 35vw),
+
   var(--body-bg);
 }
 
@@ -34,7 +46,36 @@ ul {
   list-style-type: None;
 }
 
+.anchor{
+  display: block;
+  padding:0;
+  margin:0;
+  height: 200px; /*same height as header*/
+  margin-top: -200px;
+  visibility: hidden;
+}
+
+.headerContainer{
+  margin:0;
+  padding:0;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position:relative;
+  z-index: -1;
+}
+
+.doodad {
+  position: absolute;
+  transform: rotate(45deg);
+  border-radius: 13px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--content-bg);
+  -webkit-backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
+  backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
+}
+
 .BodyContainer {
+  position:relative;
   height: auto;
   flex:1;
   display: flex;
@@ -333,8 +374,8 @@ iframe{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin:0;
-  padding:0;
+  margin-top: 50px;
+  margin-bottom: 10px;
   margin-left: -10px;
   margin-right:-10px;
 }

@@ -14,11 +14,11 @@ headerTemplate.innerHTML = `
       <span>Menu</span>
     </button>
     <ul class=Menu id="Menu">
-      <li class=Button ><a href="/">Home</a></li>
-      <li class=Button ><a href="/about">About</a></li>
-      <li class=Button ><a href="/calendar">Calendar</a></li>
-      <li class=Button ><a href="/resources">Resources</a></li>
-      <li class=Button ><a href="/contact">Join+Contact</a></li>
+      <li class=Button ><a href="#home" onclick="return toggleMenu.call()">Home</a></li>
+      <li class=Button ><a href="#about" onclick="return toggleMenu.call()">About</a></li>
+      <li class=Button ><a href="#calendar" onclick="return toggleMenu.call()">Calendar</a></li>
+      <li class=Button ><a href="#resources" onclick="return toggleMenu.call()">Resources</a></li>
+      <li class=Button ><a href="#contact" onclick="return toggleMenu.call()">Join+Contact</a></li>
       <div class=MouseListener onclick="toggleMenu.call()" ></div>
     </ul>
   </nav>
