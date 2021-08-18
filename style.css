@@ -50,8 +50,8 @@ ul {
   display: block;
   padding:0;
   margin:0;
-  height: 400px; /*same height as header*/
-  margin-top: -400px;
+  height: 200px; /*same height as header*/
+  margin-top: -200px;
   visibility: hidden;
 }
 
