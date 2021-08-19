@@ -4,8 +4,8 @@
   display: flex;
 
   --fallback-bg: #ffffff80;
-  --body-bg: #D8A47F50;
-  --body-bg-2: #d87fa680;
+  --body-bg: #f3e2d7;
+  --body-bg-2: #ebbfd2;
   --g1: 191, 74, 168;
   --g2: 109, 195, 252;
   --g3: 104, 31, 128;
@@ -29,7 +29,7 @@ body {
   radial-gradient(circle at 60vw 25vh,rgb(var(--g1),0.5) 0,rgba(var(--g1),0) 32vw),
   radial-gradient(circle at 52vw 65vh,rgb(var(--g3),0.5) 0,rgba(var(--g3),0) 35vw),
   linear-gradient(var(--body-bg),var(--body-bg-2)),
-  white;
+  var(--body-bg-2);
 }
 
 ul {
