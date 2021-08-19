@@ -48,6 +48,11 @@ ul {
     -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
     backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
   }
+
+  .Menu {
+    -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
+  }
 }
 
 /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
@@ -56,21 +61,11 @@ ul {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     background-color: var(--fallback-bg);
   }
-}
 
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .Menu {
-    -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
-    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
-  }
-}
-
-@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .Menu {
     background-color: var(--fallback-bg);
   }
 }
-
 
 .anchor{
   display: block;
@@ -186,6 +181,7 @@ ul {
   display: block;
   top:0;
   background-color: var(--fallback-bg);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
 .TitleBox .MenuContainer .Hamburger {
