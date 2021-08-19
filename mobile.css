@@ -71,7 +71,7 @@ ul {
   display: block;
   padding:0;
   margin:0;
-  height: 300px; /*same height as header*/
+  height: 300px;
   margin-top: -300px;
   visibility: hidden;
 }
@@ -334,6 +334,8 @@ ul {
   min-height: 20px;
   padding: 0;
   padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   align-items: flex-end;
   justify-content: space-between;
   display:flex;
@@ -377,7 +379,6 @@ iframe{
   padding:10px;
   opacity: 1;
   background-color: white;
-  /* filter: hue-rotate(60deg); */
   height:300px;
   width: 100%;
   box-sizing: border-box;
@@ -411,9 +412,6 @@ iframe{
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  /* URL to SVG filter */
-
-  /* Multiple filters */
 }
 
 .CardContainer .CardContent {
