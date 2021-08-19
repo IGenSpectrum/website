@@ -414,6 +414,9 @@ iframe{
   box-sizing: border-box;
   height: 150px;
   padding: 0;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
   /* URL to SVG filter */
 
   /* Multiple filters */
