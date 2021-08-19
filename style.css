@@ -3,8 +3,7 @@
   min-height: 100%;
   display: flex;
 
-  --title-bg: #ffffff50;
-  --content-bg: #ffffff10;
+  --fallback-bg: #ffffff80;
   --body-bg: #D8A47F50;
   --body-bg-2: #d87fa680;
   --g1: 191, 74, 168;
@@ -37,6 +36,23 @@ ul {
   list-style-type: None;
 }
 
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .glass {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
+    backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(140%);
+  }
+}
+
+/* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .glass {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--fallback-bg);
+  }
+}
+
+
 .anchor{
   display: block;
   padding:0;
@@ -59,10 +75,6 @@ ul {
   position: absolute;
   transform: rotate(45deg);
   border-radius: 13px;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  background-color: var(--content-bg);
-  -webkit-backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
-  backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
 }
 
 .BodyContainer {
@@ -89,10 +101,6 @@ ul {
   padding:50px;
   max-width: 900px;
   flex: 1 ;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  background-color: var(--content-bg);
-  -webkit-backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
-  backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
 }
 
 .BodyContainer h1 {
@@ -151,7 +159,6 @@ ul {
   margin-left:0;
   margin-right: 0;
   padding: 0;
-  background-color: var(--title-bg);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -161,9 +168,6 @@ ul {
   color: var(--title-text);
   position:sticky;
   top:0;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
-  backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
     /*
   opacity: 0;
   animation: fadeIn .5s ease-in 1 forwards;
@@ -344,10 +348,8 @@ ul {
 .iframeContainer {
   padding: 20px;
   margin-bottom: 10px;
-  background-color: var(--title-bg);
   border-radius: 13px;
   overflow: hidden;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
 iframe{
@@ -379,9 +381,6 @@ iframe{
   min-width: 40%;
   flex-grow: 1;
   overflow: hidden;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
-  backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(135%);
 }
 
 .CardContainer .CardThumbnail{

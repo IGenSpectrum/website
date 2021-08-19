@@ -36,7 +36,7 @@ class Header extends HTMLElement {
 
   connectedCallback() {
     this.appendChild(headerTemplate.content.cloneNode(true));
-    this.className="TitleBox";
+    this.className="glass TitleBox";
   }
 }
 
