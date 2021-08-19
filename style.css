@@ -3,8 +3,6 @@
   min-height: 100%;
   display: flex;
 
-  --title-bg: #ffffff50;
-  --content-bg: #ffffff10;
   --fallback-bg: #ffffff80;
   --body-bg: #D8A47F50;
   --body-bg-2: #d87fa680;
@@ -162,7 +160,6 @@ ul {
   margin-left:0;
   margin-right: 0;
   padding: 0;
-  background-color: var(--title-bg);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -352,7 +349,6 @@ ul {
 .iframeContainer {
   padding: 20px;
   margin-bottom: 10px;
-  background-color: var(--title-bg);
   border-radius: 13px;
   overflow: hidden;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
