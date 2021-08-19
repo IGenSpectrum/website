@@ -16,6 +16,8 @@ html{
 
   --body-font: 'Lato',sans-serif;
   --theme-font: 'Playfair Display';
+
+  --content-max-width: 700px;
 }
 
 body {
@@ -83,6 +85,9 @@ ul {
   padding-bottom: 100px;
   position:relative;
   z-index: -1;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
 }
 
 .doodad {
@@ -100,6 +105,7 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   -webkit-text-size-adjust: none;
   margin:0;
   padding:0;
@@ -116,6 +122,9 @@ ul {
   opacity: 100%;
   border-radius: 13px;
   flex: 1 ;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
 }
 
 .BodyContainer h1{
@@ -339,6 +348,9 @@ ul {
   justify-content: space-between;
   display:flex;
   flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
 }
 
 .Footer p{
@@ -371,6 +383,9 @@ ul {
   margin:0;
   padding:0;
   background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
 }
 
 iframe{
@@ -391,6 +406,9 @@ iframe{
   padding:0;
   margin:0;
   margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
 }
 
 .Card {
