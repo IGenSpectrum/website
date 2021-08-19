@@ -29,10 +29,8 @@ body {
   radial-gradient(circle at 30vw 40vh,rgba(var(--g2),0.4) 0,rgba(var(--g2),0) 60vw),
   radial-gradient(circle at 70vw 25vh,rgb(var(--g1),0.4) 0,rgba(var(--g1),0) 60vw),
   radial-gradient(circle at 52vw 65vh,rgb(var(--g3),0.4) 0,rgba(var(--g3),0) 80vw),
-
   linear-gradient(var(--body-bg),var(--body-bg-2)),
   white;
-  position: relative;
 }
 
 button {
