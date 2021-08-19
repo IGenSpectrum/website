@@ -69,7 +69,7 @@ ul {
   display: block;
   padding:0;
   margin:0;
-  height: 200px; /*same height as header*/
+  height: 200px;
   margin-top: -200px;
   visibility: hidden;
 }
@@ -105,7 +105,6 @@ ul {
 }
 
 .BodyContainer .Content{
-  /*border: 1px solid var(--body-text);*/
   border-radius: 13px;
   margin:0;
   margin-top: 50px;
@@ -180,10 +179,6 @@ ul {
   color: var(--title-text);
   position:sticky;
   top:0;
-    /*
-  opacity: 0;
-  animation: fadeIn .5s ease-in 1 forwards;
-  */
 }
 
 .TitleBox .Hamburger {
@@ -369,7 +364,6 @@ iframe{
   opacity: 1;
   background-color: white;
   mix-blend-mode: multiply;
-  /* filter: hue-rotate(60deg); */
   height:600px;
   width: 100%;
   position: relative;
@@ -404,9 +398,6 @@ iframe{
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  /* URL to SVG filter */
-
-  /* Multiple filters */
 }
 
 .CardContainer .CardContent {
