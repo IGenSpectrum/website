@@ -2,9 +2,11 @@ html{
   min-height: 100%;
   display: flex;
 
-  --fallback-bg: #ffffff50;
+  --fallback-bg: #ffffffA0;
+  --button-bg: #ffffff50;
+
   --body-bg: #D8A47F50;
-  --body-bg-2: #d87fa680;
+  --body-bg-2: #d87fa6A0;
   --g1: 191, 74, 168;
   --g2: 109, 195, 252;
   --g3: 104, 31, 128;
@@ -58,6 +60,20 @@ ul {
   }
 }
 
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .Menu {
+    -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
+  }
+}
+
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .Menu {
+    background-color: var(--fallback-bg);
+  }
+}
+
+
 .anchor{
   display: block;
   padding:0;
@@ -91,7 +107,6 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
   -webkit-text-size-adjust: none;
   margin:0;
   padding:0;
@@ -172,6 +187,7 @@ ul {
   color: var(--title-text);
   display: block;
   top:0;
+  background-color: var(--fallback-bg);
 }
 
 .TitleBox .MenuContainer .Hamburger {
@@ -237,23 +253,21 @@ ul {
   display: flex;
   flex-direction: column;
   order:3;
-  background: None;
   margin:0;
   padding: 0;
 }
 
 .TitleBox .Menu {
+  position:absolute;
   flex-grow: 2;
   display: None;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items:stretch;
-  background: None;
   width: 100%;
   margin:0;
   padding: 0;
   padding-bottom: 10px;
-  position:absolute;
 }
 
 .Menu.Visible {
@@ -268,7 +282,8 @@ ul {
     padding: 0;
     position:relative;
     border-radius: 13px;
-    /*border-top: 0.5px solid var(--body-text);*/
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--button-bg);
 }
 
 .TitleBox .Menu .MouseListener {
@@ -358,6 +373,9 @@ ul {
   margin-bottom: 40px;
   border-radius: 13px;
   overflow: hidden;
+  margin:0;
+  padding:0;
+  background-color: white;
 }
 
 iframe{
@@ -365,24 +383,12 @@ iframe{
   padding:10px;
   opacity: 1;
   background-color: white;
-  mix-blend-mode: multiply;
   /* filter: hue-rotate(60deg); */
   height:300px;
   width: 100%;
   box-sizing: border-box;
   position: relative;
 }
-iframe{
-  margin:0;
-  opacity: 1;
-  background-color: white;
-  mix-blend-mode: multiply;
-  height:400px;
-  max-width: 100%;
-  padding:10px;
-  position: relative;
-}
-
 
 .CardContainer {
   display: flex;
@@ -408,9 +414,6 @@ iframe{
   box-sizing: border-box;
   height: 150px;
   padding: 0;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
   /* URL to SVG filter */
 
   /* Multiple filters */
