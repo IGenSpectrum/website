@@ -6,6 +6,7 @@
   --title-bg: #ffffff50;
   --content-bg: #ffffff10;
   --body-bg: #D8A47F50;
+  --body-bg-2: #d87fa680;
   --g1: 191, 74, 168;
   --g2: 109, 195, 252;
   --g3: 104, 31, 128;
@@ -28,18 +29,8 @@ body {
   radial-gradient(circle at 40vw 40vh,rgba(var(--g2),0.5) 0,rgba(var(--g2),0) 37vw),
   radial-gradient(circle at 60vw 25vh,rgb(var(--g1),0.5) 0,rgba(var(--g1),0) 32vw),
   radial-gradient(circle at 52vw 65vh,rgb(var(--g3),0.5) 0,rgba(var(--g3),0) 35vw),
-
-
-  radial-gradient(circle at 40vw 250vh,rgba(var(--g2),0.5) 0,rgba(var(--g2),0) 37vw),
-  radial-gradient(circle at 60vw 235vh,rgb(var(--g1),0.5) 0,rgba(var(--g1),0) 32vw),
-  radial-gradient(circle at 52vw 275vh,rgb(var(--g3),0.5) 0,rgba(var(--g3),0) 35vw),
-
-
-  radial-gradient(circle at 40vw 570vh,rgba(var(--g2),0.5) 0,rgba(var(--g2),0) 37vw),
-  radial-gradient(circle at 60vw 555vh,rgb(var(--g1),0.5) 0,rgba(var(--g1),0) 32vw),
-  radial-gradient(circle at 52vw 595vh,rgb(var(--g3),0.5) 0,rgba(var(--g3),0) 35vw),
-
-  var(--body-bg);
+  linear-gradient(var(--body-bg),var(--body-bg-2)),
+  white;
 }
 
 ul {
