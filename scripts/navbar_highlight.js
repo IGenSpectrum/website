@@ -24,12 +24,14 @@ function highlight(){
 
 let ticking = false;
 
-document.addEventListener('scroll', function(e){
-  if (!ticking) {
-    requestAnimationFrame(function(){
-      highlight();
-      ticking = false;
-    });
-    ticking = true;
-  }
-});
+if (window.innerWidth > 1000) {
+  document.addEventListener('scroll', function(e){
+    if (!ticking) {
+      requestAnimationFrame(function(){
+        highlight();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+}
