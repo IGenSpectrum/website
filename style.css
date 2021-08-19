@@ -101,7 +101,6 @@ ul {
   padding:50px;
   max-width: 900px;
   flex: 1 ;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
 .BodyContainer h1 {
@@ -351,7 +350,6 @@ ul {
   margin-bottom: 10px;
   border-radius: 13px;
   overflow: hidden;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
 iframe{
