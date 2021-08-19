@@ -358,6 +358,9 @@ ul {
   margin-bottom: 40px;
   border-radius: 13px;
   overflow: hidden;
+  margin:0;
+  padding:0;
+  background-color: white;
 }
 
 iframe{
@@ -365,24 +368,12 @@ iframe{
   padding:10px;
   opacity: 1;
   background-color: white;
-  mix-blend-mode: multiply;
   /* filter: hue-rotate(60deg); */
   height:300px;
   width: 100%;
   box-sizing: border-box;
   position: relative;
 }
-iframe{
-  margin:0;
-  opacity: 1;
-  background-color: white;
-  mix-blend-mode: multiply;
-  height:400px;
-  max-width: 100%;
-  padding:10px;
-  position: relative;
-}
-
 
 .CardContainer {
   display: flex;
