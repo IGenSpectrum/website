@@ -52,6 +52,20 @@ ul {
   }
 }
 
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .TitleBox {
+    -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
+  }
+}
+
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .TitleBox {
+    background-color: var(--fallback-bg);
+  }
+}
+
+
 
 .anchor{
   display: block;
