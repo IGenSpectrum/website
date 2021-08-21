@@ -1,3 +1,5 @@
+/* || General styles and variables */
+
 html{
   min-height: 100%;
   display: flex;
@@ -35,14 +37,73 @@ body {
   var(--body-bg-2);
 }
 
+ul {
+  list-style-type: none;
+}
+
+p{
+  font-size: 18px;
+  font-weight: 200;
+
+  display: block;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h1{
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: var(--theme-font);
+
+  padding:0;
+  margin: 0;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: var(--body-text);
+}
+
+a{
+  text-decoration: none;
+  color: var(--highlight-text);
+  font-weight: 400;
+}
+
+
+a:focus{
+  text-decoration: underline;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+hr {
+  margin:50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  border: none;
+  border-top: 1px solid var(--body-text);
+}
+
 button {
   background: None;
   border: None;
 }
 
-ul {
-  list-style-type: none;
-}
+/* || UTILITIES */
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .glass {
@@ -51,7 +112,9 @@ ul {
     backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
   }
 
-  .Menu {
+  /* declare separately bc of mobile issues */
+  /* TODO: move mobile navbar to horizontal scrolling menu */
+  #menu {
     -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
     backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
   }
@@ -64,21 +127,42 @@ ul {
     background-color: var(--fallback-bg);
   }
 
-  .Menu {
+  #menu {
     background-color: var(--fallback-bg);
   }
 }
 
-.anchor{
-  display: block;
-  padding:0;
+/* || SITEWIDE */
+
+main {
+  height: auto;
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-text-size-adjust: none;
   margin:0;
-  height: 300px;
-  margin-top: -300px;
-  visibility: hidden;
+  padding:0;
+  color: var(--body-text);
 }
 
-.headerContainer{
+.content {
+  margin:0;
+  margin-top:10px;
+  margin-bottom: 10px;
+  padding:10px;
+  padding-top:20px;
+  padding-bottom:20px;
+  opacity: 100%;
+  border-radius: 13px;
+  flex: 1 ;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
+}
+
+.section-title {
   margin:0;
   padding:0;
   padding-top: 100px;
@@ -97,88 +181,18 @@ ul {
   z-index: -1;
 }
 
-
-
-.BodyContainer {
-  height: auto;
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  -webkit-text-size-adjust: none;
-  margin:0;
-  padding:0;
-  color: var(--body-text);
-}
-
-.Content {
-  margin:0;
-  margin-top:10px;
-  margin-bottom: 10px;
-  padding:10px;
-  padding-top:25px;
-  padding-bottom:25px;
-  opacity: 100%;
-  border-radius: 13px;
-  flex: 1 ;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: var(--content-max-width);
-}
-
-.BodyContainer h1{
-  text-align: center;
-  font-family: var(--theme-font);
-  font-size: 50px;
-  padding:0;
-  margin: 0;
-  margin-bottom: 50px;
-  margin-top: 20px;
-  color: var(--body-text);
-}
-
-.BodyContainer h2 {
-  text-align: center;
-  font-size: 24px;
-  padding-left: 0%;
-  margin: 0px;
-  margin-bottom: 20px;
-  font-weight: 200;
-  color: var(--body-text);
-}
-
-.BodyContainer hr {
-  margin:50px;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  border: none;
-  border-top: 1px solid var(--body-text);
-}
-
-.BodyContainer p{
-  font-size: 18px;
+.anchor{
   display: block;
-  overflow: hidden;
-  margin-top:20px;
+  padding:0;
+  margin:0;
+  height: 300px;
+  margin-top: -300px;
+  visibility: hidden;
 }
 
-.BodyContainer a{
-  text-decoration: none;
-  color: var(--highlight-text);
-  font-weight: 400;
-}
+/* || HEADER + NAVIGATION */
 
-
-.BodyContainer a:focus{
-  text-decoration: underline;
-}
-
-.BodyContainer a:hover{
-  text-decoration: underline;
-}
-
-.TitleBox {
+#site-header {
   margin-left:0;
   margin-right: 0;
   flex-grow: 0;
@@ -192,7 +206,7 @@ ul {
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
-.TitleBox .MenuContainer .Hamburger {
+#hamburger {
   position:absolute;
   top:0;
   left:0;
@@ -201,19 +215,19 @@ ul {
   justify-content: flex-end;
 }
 
-.TitleBox .Hamburger i{
+#hamburger i{
   font-size: 24px;
   padding:0;
-  padding-top:4px;
+  padding-top:5.5px;
 }
 
-.Hamburger span{
+#hamburger span{
   width:0;
   height:0;
   overflow: hidden;
 }
 
-.TitleBox .NameContainer {
+#logo {
     order:2;
     margin: 0;
     padding: 0;
@@ -225,32 +239,27 @@ ul {
     display:flex;
     flex-direction: row;
     justify-content: center;
-    align-items:flex-end;
+    align-items: center;
 }
 
-  .NameContainer .Name {
+#logo .name {
     padding: 0;
     margin:0;
     padding-left: 10px;
     padding-right: 10px;
     font-family: var(--body-font);
   }
-  .NameContainer .Logo {
-    display: inline-block;
-    padding: 0;
-    margin:0;
-    padding-left: 10px;
-    padding-right: 0px;
-  }
 
-  .NameContainer .Logo img{
-    height:22px;
-    margin:0;
-    margin-bottom: -1px;
-    padding:0;
-  }
+#logo img{
+  height:22px;
+  margin:0;
+  padding:0;
+  margin-bottom: -1px;
+  padding-right: 10px;
+  display: inline-block;
+}
 
-.MenuContainer {
+nav {
   width:100%;
   display: flex;
   flex-direction: column;
@@ -259,7 +268,7 @@ ul {
   padding: 0;
 }
 
-.TitleBox .Menu {
+#menu {
   position:absolute;
   flex-grow: 2;
   display: None;
@@ -272,12 +281,22 @@ ul {
   padding-bottom: 10px;
 }
 
-.Menu.Visible {
+#menu.visible {
   display: flex;
   height: 100%;
 }
 
-.TitleBox .Menu .Button {
+#menu a{
+  display: block;
+  text-decoration: none;
+  color: var(--title-text);
+  font-weight: 300;
+  font-size: large;
+  padding:15px;
+  margin:0;
+}
+
+.button {
     background: None;
     margin: 10px;
     margin-bottom: 0;
@@ -288,93 +307,13 @@ ul {
     background-color: var(--button-bg);
 }
 
-.TitleBox .Menu .MouseListener {
+.mouse-listener {
     margin:0;
     padding:0;
     flex: 1;
 }
 
-
-.TitleBox .Menu  a{
-  display: block;
-  text-decoration: none;
-  color: var(--title-text);
-  font-weight: 300;
-  font-size: large;
-  padding:15px;
-  margin:0;
-}
-
-.TitleBox .OCF {
-  order: 1;
-  margin:0;
-  padding:0;
-  padding-left:10px;
-  padding-right:10px;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  display: flex;
-  align-items: flex-end;
-  position:absolute;
-  top:0;
-  right:0;
-}
-
-.TitleBox .OCF a {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: flex-end;
-}
-
-.TitleBox .OCF img {
-  margin:0;
-  padding: 0;
-  padding-top: 4px;
-  height:24px;
-}
-
-.Footer {
-  margin: 0;
-  background-color: var(--pad);
-  color: var(--body-text);
-  font-size: 12px;
-  min-height: 20px;
-  padding: 0;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  align-items: flex-end;
-  justify-content: space-between;
-  display:flex;
-  flex-direction: row;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: var(--content-max-width);
-}
-
-.Footer p{
-  margin: 0;
-  padding: 0;
-  font-size: 12px;
-  display: block;
-}
-
-.Footer a{
-  margin:0;
-  padding: 0;
-  height:100%;
-  display: block;
-}
-
-.Footer a img{
-  margin:0;
-  padding:5px;
-  height:25px;
-  min-height: 20px;
-}
-
-
+/* || CALDENDAR */
 
 .iframeContainer {
   margin-bottom: 40px;
@@ -399,7 +338,9 @@ iframe{
   position: relative;
 }
 
-.CardContainer {
+/* || RESOURCE CARDS */
+
+.card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -411,7 +352,7 @@ iframe{
   max-width: var(--content-max-width);
 }
 
-.Card {
+.card {
   margin: 0;
   margin-top:10px;
   padding: 0;
@@ -420,7 +361,7 @@ iframe{
   overflow: hidden;
 }
 
-.CardContainer .CardThumbnail{
+.card-thumbnail {
   flex-grow: 1;
   display: block;
   box-sizing: border-box;
@@ -431,10 +372,52 @@ iframe{
   background-size: cover;
 }
 
-.CardContainer .CardContent {
+.card-content {
   height: 75;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+}
+
+/* || FOOTER */
+
+#footer {
+  margin: 0;
+  background-color: var(--pad);
+  color: var(--body-text);
+  font-size: 12px;
+  min-height: 20px;
+  padding: 0;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
+}
+
+#footer p{
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  display: block;
+}
+
+#footer a{
+  margin:0;
+  padding: 0;
+  height:100%;
+  display: block;
+}
+
+#footer a img{
+  margin:0;
+  padding:5px;
+  height:25px;
+  min-height: 20px;
 }

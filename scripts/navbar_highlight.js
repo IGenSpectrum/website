@@ -1,13 +1,13 @@
 // get navbar buttons and corresponding sections
 
-var buttons = document.querySelectorAll('#Menu > li');
+var buttons = document.querySelectorAll('#menu > li');
 var anchors = document.querySelectorAll('.anchor');
 
 const buffer = 200;
 
 var buttonDict = new Map();
 anchors.forEach(anchor => {
-  buttonDict.set(anchor,document.querySelector("#Menu > li a[href='#"+anchor.id+"']").parentNode);
+  buttonDict.set(anchor,document.querySelector("#menu > li a[href='#"+anchor.id+"']").parentNode);
 });
 
 

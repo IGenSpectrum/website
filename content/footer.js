@@ -16,7 +16,7 @@ class Footer extends HTMLElement {
 
   connectedCallback() {
     this.appendChild(footerTemplate.content.cloneNode(true));
-    this.className="Footer";
+    this.id="footer";
   }
 }
 
