@@ -1,3 +1,5 @@
+/* || General styles and variables */
+
  html {
   scroll-behavior: smooth;
   min-height: 100%;
@@ -38,6 +40,74 @@ ul {
   list-style-type: None;
 }
 
+p {
+  font-size: 18px;
+  font-weight: 200;
+
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: var(--theme-font);
+
+  padding:0;
+  margin: 0;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h3,h4,h5 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 400;
+  color: var(--highlight-text);
+}
+
+a:focus{
+  text-decoration: underline;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+
+hr {
+  padding: 0;
+  margin:50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  border: none;
+  border-top: 1px solid var(--body-text);
+}
+
+/* || UTILITIES */
+
+/* utility for transparent blurred background */
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .glass {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
@@ -45,7 +115,9 @@ ul {
     backdrop-filter: blur(5px) saturate(100%) contrast(45%) brightness(140%);
   }
 
-  .TitleBox {
+  /* declare separately bc of mobile issues */
+  /* TODO: move mobile navbar to horizontal scrolling menu */
+  #site-header {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
     backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
@@ -59,22 +131,45 @@ ul {
     background-color: var(--fallback-bg);
   }
 
-  .TitleBox {
+  #site-header {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     background-color: var(--fallback-bg);
   }
 }
 
-.anchor{
-  display: block;
-  padding:0;
-  margin:0;
-  height: 300px;
-  margin-top: -300px;
-  visibility: hidden;
+/* || SITEWIDE */
+
+main {
+  position:relative;
+  height: auto;
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 22%;
+  padding-right: 22%;
 }
 
-.headerContainer{
+.content {
+  border-radius: 13px;
+  margin:0;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding:50px;
+  padding-top:30px;
+  padding-bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
+  flex: 1 ;
+}
+
+.section-title {
   margin:0;
   padding:0;
   padding-top: 100px;
@@ -92,86 +187,18 @@ ul {
   border-radius: 13px;
 }
 
-.BodyContainer {
-  position:relative;
-  height: auto;
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  margin: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 22%;
-  padding-right: 22%;
-}
-
-.BodyContainer .Content{
-  border-radius: 13px;
-  margin:0;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  padding:50px;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: var(--content-max-width);
-  flex: 1 ;
-}
-
-.BodyContainer h1 {
-  text-align: center;
-  font-family: var(--theme-font);
-  font-size: 50px;
-  padding:0;
-  margin: 0;
-  margin-bottom: 50px;
-  margin-top: 20px;
-  color: var(--body-text);
-}
-
-.BodyContainer h2 {
-  text-align: center;
-  font-size: 24px;
-  padding-left: 0%;
-  margin: 0px;
-  margin-bottom: 20px;
-  font-weight: 200;
-  color: var(--body-text);
-}
-
-.BodyContainer hr {
-  margin:50px;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  border: none;
-  border-top: 1px solid var(--body-text);
-}
-
-
-.BodyContainer p{
-  font-size: 18px;
+.anchor{
   display: block;
-  overflow: hidden;
-  margin-top:40px;
+  padding:0;
+  margin:0;
+  height: 300px;
+  margin-top: -300px;
+  visibility: hidden;
 }
 
-.BodyContainer a{
-  text-decoration: none;
-  font-weight: 400;
-  color: var(--highlight-text);
-}
+/* || HEADER + NAVIGATION */
 
-.BodyContainer a:focus{
-  text-decoration: underline;
-}
-
-.BodyContainer a:hover{
-  text-decoration: underline;
-}
-
-.TitleBox {
+#site-header {
   box-sizing: border-box;
   margin-left:0;
   margin-right: 0;
@@ -187,11 +214,11 @@ ul {
   top:0;
 }
 
-.TitleBox .Hamburger {
+#hamburger {
   display: none;
 }
 
-.TitleBox .NameContainer {
+#logo {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -203,33 +230,29 @@ ul {
   display:flex;
   flex-direction: row;
   justify-content: center;
-  align-items:flex-end;
+  align-items: center;
   cursor:pointer;
 }
 
-.NameContainer .Name {
+#logo .name {
   padding: 0;
   margin:0;
   padding-left: 10px;
   padding-right: 10px;
   font-family: var(--body-font);
 }
-.NameContainer .Logo {
-  display: inline-block;
-  padding: 0;
+
+#logo img{
+  height:22px;
   margin:0;
+  padding:0;
+  margin-bottom: -1px;
+  display: inline-block;
   padding-left: 30px;
   padding-right: 10px;
 }
 
-.NameContainer .Logo img{
-  height:22px;
-  margin:0;
-  margin-bottom: -1px;
-  padding:0;
-}
-
-.TitleBox .MenuContainer {
+nav {
     display: flex;
     flex-direction: column;
     background: None;
@@ -239,7 +262,7 @@ ul {
     padding-left: 20px;
 }
 
-.TitleBox .Menu {
+#menu {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -250,45 +273,7 @@ ul {
     padding: 0;
 }
 
-
-.TitleBox .Menu .Button {
-    display: inline-block;
-    background: None;
-    padding: 0;
-    margin-right: 5%;
-    position:relative;
-    line-height: 1.45;
-}
-
-.TitleBox .Menu .MouseListener {
-    display: none;
-}
-
-
-.TitleBox .OCF {
-  margin:0;
-  padding:20px;
-  display: flex;
-  align-items: stretch;
-}
-
-.TitleBox .OCF a {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: flex-end;
-}
-
-.TitleBox .OCF img {
-  margin:0;
-  padding: 0;
-  padding-bottom: 5px;
-  height:25px;
-}
-
-
-
-.TitleBox .Menu  a{
+#menu  a{
   display: inline-block;
   text-decoration: none;
   color: var(--title-text);
@@ -301,7 +286,16 @@ ul {
   margin:0;
 }
 
-.TitleBox .Button:hover:after{
+.button {
+    display: inline-block;
+    background: None;
+    padding: 0;
+    margin-right: 5%;
+    position:relative;
+    line-height: 1.45;
+}
+
+.button:hover:after{
   content: '';
   width: 100%;
   height: 2px;
@@ -312,7 +306,7 @@ ul {
   left: 0;
 }
 
-.TitleBox .Button:focus-within:after{
+.button:focus-within:after{
   content: '';
   width: 100%;
   height: 2px;
@@ -323,7 +317,7 @@ ul {
   left: 0;
 }
 
-.TitleBox .Button.active:after{
+.button.active:after{
   content: '';
   width: 100%;
   height: 2px;
@@ -334,45 +328,14 @@ ul {
   left: 0;
 }
 
-.Footer {
-  margin: 0;
-  background-color: var(--pad);
-  color: var(--body-text);
-  font-size: 12px;
-  min-height: 20px;
-  padding: 0;
-  padding-bottom: 5px;
-  align-items: stretch;
-  justify-content: space-between;
-  display:flex;
-  flex-direction: row;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: var(--content-max-width);
+.mouse-listener {
+    display: none;
 }
 
-.Footer p{
-  margin:0;
-  padding: 0;
-  font-size: 12px;
-  display: block;
-}
 
-.Footer a{
-  margin:0;
-  padding: 0;
-  height:100%;
-  display: block;
-}
+/* || CALENDAR */
 
-.Footer a img{
-  margin:0;
-  padding:5px;
-  height:20px;
-  min-height: 20px;
-}
-
-.iframeContainer {
+.iframe-container {
   padding: 20px;
   margin:0;
   margin-bottom: 10px;
@@ -393,7 +356,9 @@ iframe{
   position: relative;
 }
 
-.CardContainer {
+/* || RESOURCE CARDS */
+
+.card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -405,7 +370,7 @@ iframe{
   max-width: calc(var(--content-max-width) + 20px);
 }
 
-.Card {
+.card {
   margin: 10px;
   padding: 0;
   border-radius: 13px;
@@ -414,7 +379,7 @@ iframe{
   overflow: hidden;
 }
 
-.CardContainer .CardThumbnail{
+.card-thumbnail{
   flex-grow: 1;
   display: block;
   box-sizing: border-box;
@@ -425,10 +390,50 @@ iframe{
   background-size: cover;
 }
 
-.CardContainer .CardContent {
+.card-content {
   height: 75px;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+}
+
+/* || FOOTER */
+
+#footer {
+  margin: 0;
+  background-color: var(--pad);
+  color: var(--body-text);
+  font-size: 12px;
+  min-height: 20px;
+  padding: 0;
+  padding-bottom: 5px;
+  align-items: stretch;
+  justify-content: space-between;
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
+}
+
+#footer p{
+  margin:0;
+  padding: 0;
+  font-size: 12px;
+  display: block;
+}
+
+#footer a{
+  margin:0;
+  padding: 0;
+  height:100%;
+  display: block;
+}
+
+#footer a img{
+  margin:0;
+  padding:5px;
+  height:20px;
+  min-height: 20px;
 }

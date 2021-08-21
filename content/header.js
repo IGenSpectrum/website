@@ -1,25 +1,23 @@
 const headerTemplate = document.createElement('template');
 headerTemplate.innerHTML = `
-  <div class=NameContainer onclick="location.href='/';">
-    <div class=Logo>
-      <img src="/img/logo.svg"></img>
-    </div>
-    <div class=Name>
+  <div id=logo onclick="location.href='/';">
+    <img src="img/logo.svg"></img>
+    <div id=name>
         IGenSpectrum
     </div>
   </div>
   <nav class=MenuContainer role="navigation">
-    <button class=Hamburger id="Hamburger" onclick="toggleMenu.call()" aria-expanded="false">
+    <button id="hamburger" onclick="toggleMenu.call()" aria-expanded="false">
       <i class="fas fa-bars" aria-hidden="true"></i>
       <span>Menu</span>
     </button>
-    <ul class=Menu id="Menu">
-      <li class=Button ><a href="#home" onclick="return toggleMenu.call()">Home</a></li>
-      <li class=Button ><a href="#about" onclick="return toggleMenu.call()">About</a></li>
-      <li class=Button ><a href="#calendar" onclick="return toggleMenu.call()">Calendar</a></li>
-      <li class=Button ><a href="#resources" onclick="return toggleMenu.call()">Resources</a></li>
-      <li class=Button ><a href="#contact" onclick="return toggleMenu.call()">Join+Contact</a></li>
-      <div class=MouseListener onclick="toggleMenu.call()" ></div>
+    <ul id="menu">
+      <li class=button ><a href="#home" onclick="return toggleMenu.call()">Home</a></li>
+      <li class=button ><a href="#about" onclick="return toggleMenu.call()">About</a></li>
+      <li class=button ><a href="#calendar" onclick="return toggleMenu.call()">Calendar</a></li>
+      <li class=button ><a href="#resources" onclick="return toggleMenu.call()">Resources</a></li>
+      <li class=button ><a href="#contact" onclick="return toggleMenu.call()">Join+Contact</a></li>
+      <div class=mouse-listener onclick="toggleMenu.call()" ></div>
     </ul>
   </nav>
 `;
@@ -36,16 +34,16 @@ class Header extends HTMLElement {
 
   connectedCallback() {
     this.appendChild(headerTemplate.content.cloneNode(true));
-    this.className="TitleBox";
+    this.id="site-header";
   }
 }
 
 customElements.define('header-component', Header);
 
 function toggleMenu(){
-  const menu = document.getElementById("Menu");
-  menu.classList.toggle("Visible");
-  const hamburger = document.getElementById("Hamburger");
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("visible");
+  const hamburger = document.getElementById("hamburger");
   let exp = hamburger.getAttribute('aria-expanded')
   console.log(exp)
   hamburger.setAttribute('aria-expanded',exp==="true"? "false" : "true");
