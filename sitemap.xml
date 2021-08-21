@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>http://igenspectrum.berkeley.edu</loc>
-   </url>
-   <url>
-      <loc>http://igenspectrum.berkeley.edu/about</loc>
-   </url>
-   <url>
-      <loc>http://igenspectrum.berkeley.edu/calendar</loc>
-   </url>
-   <url>
-      <loc>http://igenspectrum.berkeley.edu/resources</loc>
-   </url>
-   <url>
-      <loc>http://igenspectrum.berkeley.edu/contact</loc>
+      <loc>https://igenspectrum.berkeley.edu/</loc>
+      <lastmod>2021-08-19T22:41:50+00:00</lastmod>
    </url>
 </urlset>
