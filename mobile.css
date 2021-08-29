@@ -23,18 +23,12 @@ html{
 }
 
 body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
   font-family: var(--body-font);
   font-weight: 200;
-  margin: 0;
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  background:
-  radial-gradient(circle at 30vw 40vh,rgba(var(--g2),0.4) 0,rgba(var(--g2),0) 60vw),
-  radial-gradient(circle at 70vw 25vh,rgb(var(--g1),0.4) 0,rgba(var(--g1),0) 60vw),
-  radial-gradient(circle at 52vw 65vh,rgb(var(--g3),0.4) 0,rgba(var(--g3),0) 80vw),
-  linear-gradient(var(--body-bg),var(--body-bg-2)),
-  var(--body-bg-2);
 }
 
 ul {
@@ -105,6 +99,20 @@ button {
 
 /* || UTILITIES */
 
+.parallax-container {
+  overflow: scroll;
+  scroll-behavior: smooth;
+  perspective: 1px;
+  perspective-origin: center 20%;
+}
+
+.parallax-back {
+  z-index: 1;
+  transform-origin: center top;
+  transform: translateZ(-0.5px) scale(1.5);
+  position: relative;
+}
+
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .glass {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
@@ -112,12 +120,6 @@ button {
     backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
   }
 
-  /* declare separately bc of mobile issues */
-  /* TODO: move mobile navbar to horizontal scrolling menu */
-  #menu {
-    -webkit-backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
-    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(140%);
-  }
 }
 
 /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
@@ -135,16 +137,27 @@ button {
 /* || SITEWIDE */
 
 main {
-  height: auto;
-  flex:1;
+  margin: 0;
+  padding:0;
+  padding-top: 100px;
+  top:0;
+  left:0;
+  height: 100vh;
+  width: 100vw;
+  position:absolute;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   -webkit-text-size-adjust: none;
-  margin:0;
-  padding:0;
   color: var(--body-text);
+  background:
+  radial-gradient(circle at 30vw 40vh,rgba(var(--g2),0.4) 0,rgba(var(--g2),0) 60vw),
+  radial-gradient(circle at 70vw 25vh,rgb(var(--g1),0.4) 0,rgba(var(--g1),0) 60vw),
+  radial-gradient(circle at 52vw 65vh,rgb(var(--g3),0.4) 0,rgba(var(--g3),0) 80vw),
+  linear-gradient(var(--body-bg),var(--body-bg-2)),
+  var(--body-bg-2);
+  background-attachment: local;
 }
 
 .content {
@@ -156,7 +169,7 @@ main {
   padding-bottom:20px;
   opacity: 100%;
   border-radius: 13px;
-  flex: 1 ;
+  flex: 1;
   width: 100%;
   box-sizing: border-box;
   max-width: var(--content-max-width);
@@ -182,27 +195,25 @@ main {
 }
 
 .anchor{
-  display: block;
   padding:0;
   margin:0;
-  height: 300px;
-  margin-top: -300px;
+  height: 0;
   visibility: hidden;
 }
 
 /* || HEADER + NAVIGATION */
 
 #site-header {
-  margin-left:0;
-  margin-right: 0;
+  margin: 0;
+  padding: 0;
+  width:100%;
+  top:0;
+  box-sizing: border-box;
+  position:relative;
   flex-grow: 0;
   z-index: 2;
   padding: 0;
-  width:100%;
   color: var(--title-text);
-  display: block;
-  top:0;
-  background-color: var(--fallback-bg);
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -316,25 +327,32 @@ nav {
 /* || CALDENDAR */
 
 .iframe-container {
-  margin-bottom: 40px;
-  border-radius: 13px;
-  overflow: hidden;
+  position: relative;
+
   margin:0;
+  margin-bottom: 40px;
   padding:0;
-  background-color: white;
+
   width: 100%;
-  box-sizing: border-box;
+  height: 500px;
   max-width: var(--content-max-width);
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink:0;
+
+  background-color: white;
+  border-radius: 13px;
 }
 
 iframe{
   margin:0;
   padding:10px;
-  opacity: 1;
-  background-color: white;
-  height:300px;
+
+  height: 100%;
   width: 100%;
   box-sizing: border-box;
+
+  background-color: white;
   position: relative;
 }
 
@@ -386,21 +404,25 @@ iframe{
 
 #footer {
   margin: 0;
-  background-color: var(--pad);
-  color: var(--body-text);
-  font-size: 12px;
-  min-height: 20px;
-  padding: 0;
+  padding-top: 0;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
+
+  min-height: 20px;
+  width: 100%;
+  max-width: var(--content-max-width);
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  display:flex;
   align-items: flex-end;
   justify-content: space-between;
-  display:flex;
   flex-direction: row;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: var(--content-max-width);
+
+  font-size: 12px;
+  background-color: var(--pad);
+  color: var(--body-text);
 }
 
 #footer p{
