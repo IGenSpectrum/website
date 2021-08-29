@@ -18,12 +18,15 @@
 }
 
 body {
-  overflow: hidden;
+  margin: 0;
+
   height: 100vh;
   width: 100vw;
+
+  overflow: hidden;
+
   font-family: var(--body-font);
   font-weight: 200;
-  margin: 0;
 }
 
 ul {
@@ -31,39 +34,40 @@ ul {
 }
 
 p {
-  font-size: 18px;
-  font-weight: 200;
-
   padding: 0;
   margin: 0;
   margin-top: 20px;
   margin-bottom: 20px;
+
   display: block;
   overflow: hidden;
+
+  font-size: 18px;
+  font-weight: 200;
 }
 
 h1 {
-  text-align: center;
-  font-size: 50px;
-  font-weight: 700;
-  font-family: var(--theme-font);
-
   padding:0;
   margin: 0;
   margin-bottom: 50px;
   margin-top: 20px;
+
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: var(--theme-font);
 }
 
 h2 {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 200;
-  color: var(--body-text);
-
   padding: 0;
   margin: 0;
   margin-top: 20px;
   margin-bottom: 20px;
+
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+  color: var(--body-text);
 }
 
 h3,h4,h5 {
@@ -92,6 +96,7 @@ hr {
   margin:50px;
   margin-top: 80px;
   margin-bottom: 80px;
+
   border: none;
   border-top: 1px solid var(--body-text);
 }
@@ -106,10 +111,10 @@ hr {
 }
 
 .parallax-back {
+  position: relative;
   z-index: 1;
   transform-origin: center top;
   transform: translateZ(-0.5px) scale(1.5);
-  position: relative;
 }
 
 
@@ -125,11 +130,6 @@ hr {
 /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .glass {
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-    background-color: var(--fallback-bg);
-  }
-
-  #site-header {
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
     background-color: var(--fallback-bg);
   }
@@ -166,25 +166,29 @@ main {
 }
 
 .content {
-  border-radius: 13px;
   margin:0;
   margin-top: 50px;
   margin-bottom: 10px;
   padding:50px;
   padding-top:30px;
   padding-bottom: 30px;
+
   width: 100%;
-  box-sizing: border-box;
   max-width: var(--content-max-width);
+  box-sizing: border-box;
+
+  border-radius: 13px;
 }
 
 .section-title {
   padding:0;
   padding-top: 100px;
   padding-bottom: 100px;
+
   width: 100%;
-  box-sizing: border-box;
   max-width: var(--content-max-width);
+  box-sizing: border-box;
+
   z-index: -1;
 }
 
@@ -203,15 +207,19 @@ main {
 /* || HEADER + NAVIGATION */
 
 #site-header {
+  position:relative;
+  top:0;
+
   margin: 0;
   padding: 0;
+
   width:100%;
-  top:0;
   box-sizing: border-box;
-  position:relative;
+
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+
   z-index: 2;
   color: var(--title-text);
 }
@@ -221,19 +229,22 @@ main {
 }
 
 #logo {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
   padding-top:20px;
   padding-bottom: 20px;
-  font-size: 27px;
-  font-weight: 200;
+
   min-width: 22%;
+  box-sizing: border-box;
+
   display:flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
   cursor:pointer;
+  font-size: 27px;
+  font-weight: 200;
 }
 
 #logo .name {
@@ -245,95 +256,103 @@ main {
 }
 
 #logo img{
-  height:22px;
   margin:0;
-  padding:0;
   margin-bottom: -1px;
-  display: inline-block;
+  padding:0;
   padding-left: 30px;
   padding-right: 10px;
+
+  height:22px;
+
+  display: inline-block;
 }
 
 nav {
-    display: flex;
-    flex-direction: column;
-    background: None;
-    flex: 1;
-    margin:0;
-    padding: 0;
-    padding-left: 20px;
+  margin:0;
+  padding: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  background: None;
+  flex: 1;
 }
 
 #menu {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items:flex-end;
-    background: None;
-    flex-grow: 1;
-    margin:0;
-    padding: 0;
+  margin:0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items:flex-end;
+  background: None;
+  flex-grow: 1;
 }
 
 #menu  a{
+  margin:0;
+  padding:2px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
   display: inline-block;
   text-decoration: none;
   color: var(--title-text);
   font-weight: 300;
   font-size: large;
   text-align: bottom;
-  padding:2px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin:0;
 }
 
 .button {
-    display: inline-block;
-    background: None;
-    padding: 0;
-    margin-right: 5%;
-    position:relative;
-    line-height: 1.45;
+  position:relative;
+  padding: 0;
+  margin-right: 5%;
+  display: inline-block;
+  background: None;
+  line-height: 1.45;
 }
 
 .button:hover:after{
   content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 18px;
+
   width: 100%;
   height: 2px;
   border-radius: 1px;
   background-color: var(--highlight-text);
-  position: absolute;
-  bottom: 18px;
-  left: 0;
 }
 
 .button:focus-within:after{
   content: '';
+
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+
   width: 100%;
   height: 2px;
   border-radius: 1px;
   background-color: var(--highlight-text);
-  position: absolute;
-  bottom: 18px;
-  left: 0;
 }
 
 .button.active:after{
   content: '';
+
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+
   width: 100%;
   height: 2px;
   border-radius: 1px;
   background-color: var(--highlight-text);
-  position: absolute;
-  bottom: 18px;
-  left: 0;
 }
 
 .mouse-listener {
     display: none;
 }
-
 
 /* || CALENDAR */
 
@@ -353,43 +372,47 @@ nav {
 
 iframe{
   margin:0;
+  padding:0;
+  height:600px;
+  width: 100%;
   opacity: 1;
   background-color: white;
   mix-blend-mode: multiply;
-  height:600px;
-  width: 100%;
-  position: relative;
 }
 
 /* || RESOURCE CARDS */
 
 .card-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding:0;
   margin-top: 50px;
   margin-bottom: 10px;
   margin-left: -10px;
   margin-right:-10px;
+  padding:0;
+
   max-width: calc(var(--content-max-width) + 20px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .card {
   margin: 10px;
   padding: 0;
-  border-radius: 13px;
   min-width: 40%;
   flex-grow: 1;
+  border-radius: 13px;
   overflow: hidden;
 }
 
 .card-thumbnail{
+  padding: 0;
+  margin:0;
+
+  height: 180px;
+  box-sizing: border-box;
+
   flex-grow: 1;
   display: block;
-  box-sizing: border-box;
-  height: 180px;
-  padding: 0;
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -400,6 +423,7 @@ iframe{
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+
   min-height: 75px;
   bottom: 0;
   width: 100%;
