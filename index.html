@@ -26,7 +26,7 @@
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-<header id="site-header">
+<header id="site-header" class="glass">
   <div id=logo onclick="location.href='/';">
     <img src="img/logo.svg"></img>
     <div id=name>
@@ -48,9 +48,9 @@
     </ul>
   </nav>
 </header>
-<main id="BodyContainer">
+<main id="BodyContainer" class="parallax-container">
   <span class="anchor" id="home"></span>
-  <header class="section-title rellax" data-rellax-speed="-4">
+  <header class="section-title parallax-back">
     <h1>Welcome!</h1>
     <div class="glass doodad" style="width: 60px; height: 60px; top: 30%; right: 10%;"></div>
     <div class="glass doodad" style="width: 70px; height: 70px; top: 20%; left: 0;"></div>
@@ -77,13 +77,13 @@
       consider <a href="#contact">joining our slack and mailing list!</a>
     </p>
   </section>
-  <header class="section-title rellax" data-rellax-speed="-4" data-rellax-percentage="0.5">
+  <span class="anchor" id="about"></span>
+  <header class="section-title parallax-back">
       <h1> About </h1>
       <div class="glass doodad" style="width: 60px; height: 60px; top: 30%; right: 10%;"></div>
       <div class="glass doodad" style="width: 70px; height: 70px; top: 20%; left: 0;"></div>
       <div class="glass doodad" style="width: 50px; height: 50px; bottom: 10%; left: 20%;"></div>
   </header>
-  <span class="anchor" id="about"></span>
   <section class="glass content">
     <p>
       <span style="font-family: 'Source Serif Pro',serif;">I•Gen•Spectrum</span>
@@ -108,13 +108,13 @@
       the good vibes.
     </p>
   </section>
-  <header class="section-title rellax" data-rellax-speed="-4" data-rellax-percentage="0.5">
+  <span class="anchor" id="calendar"></span>
+  <header class="section-title parallax-back">
       <h1> Events </h1>
       <div class="glass doodad" style="width: 60px; height: 60px; top: 30%; right: 10%;"></div>
       <div class="glass doodad" style="width: 70px; height: 70px; top: 20%; left: 0;"></div>
       <div class="glass doodad" style="width: 50px; height: 50px; bottom: 10%; left: 20%;"></div>
   </header>
-  <span class="anchor" id="calendar"></span>
   <section class="glass content">
     <p>
       In normal times we usually try to host regular in-person events like coffee
@@ -129,13 +129,13 @@
   <div class="glass iframe-container">
     <iframe name="calendar" src="https://calendar.google.com/calendar/embed?src=igenspectrum%40gmail.com&ctz=America%2FLos_Angeles" style="border: 0" frameborder="0" scrolling="no"></iframe>
   </div>
-  <header class="section-title rellax" data-rellax-speed=-4 data-rellax-percentage="0.5">
+  <span class="anchor" id="resources"></span>
+  <header class="section-title parallax-back">
     <h1> Resources </h1>
     <div class="glass doodad" style="width: 60px; height: 60px; top: 30%; right: 10%;"></div>
     <div class="glass doodad" style="width: 70px; height: 70px; top: 20%; left: 0;"></div>
     <div class="glass doodad" style="width: 50px; height: 50px; bottom: 10%; left: 20%;"></div>
   </header>
-  <span class="anchor" id="resources"></span>
   <ul class=card-container>
     <li class="glass card">
       <a href="http://lgbtphysicists.org/outlist.html">
@@ -178,13 +178,13 @@
       </a>
     </li>
   </ul>
-  <header class="section-title rellax" data-rellax-speed=-4 data-rellax-percentage="0.5">
+  <span class="anchor" id="contact"></span>
+  <header class="section-title parallax-back">
     <h1>Hang out with us!</h1>
     <div class="glass doodad" style="width: 60px; height: 60px; top: 30%; right: 10%;"></div>
     <div class="glass doodad" style="width: 70px; height: 70px; top: 20%; left: 0;"></div>
     <div class="glass doodad" style="width: 50px; height: 50px; bottom: 10%; left: 20%;"></div>
   </header>
-  <span class="anchor" id="contact"></span>
   <section class="glass content">
       <p>
       If you're interested in participating in events, looking for the most up-to-date
@@ -213,11 +213,6 @@
     </a>
   </footer>
 </main>
-<script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-<script>
-  // Accepts any class name
-  var rellax = new Rellax('.rellax');
-</script>
 <script src="scripts/toggle_menu.js"></script>
 <script src="scripts/jquery-3.4.1.min.js"></script>
 <script src="scripts/navbar_highlight.js"></script>

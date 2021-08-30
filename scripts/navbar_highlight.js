@@ -1,9 +1,9 @@
 // get navbar buttons and corresponding sections
-
+const main = document.querySelector('main');
 var buttons = document.querySelectorAll('#menu > li');
 var anchors = document.querySelectorAll('.anchor');
 
-const buffer = 200;
+const buffer = 100;
 
 var buttonDict = new Map();
 anchors.forEach(anchor => {
@@ -25,7 +25,7 @@ function highlight(){
 let ticking = false;
 
 if (window.innerWidth > 1000) {
-  document.addEventListener('scroll', function(e){
+  main.addEventListener('scroll', function(e){
     if (!ticking) {
       requestAnimationFrame(function(){
         highlight();
