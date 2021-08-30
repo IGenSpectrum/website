@@ -6,7 +6,7 @@ console.log('hi');
 function collapse(){
   var current = document.body.scrollTop;
   if (current > previous){
-    window.scrollTo(0,1);
+    window.scrollTo(0,100);
   }
   else {
     window.scrollTo(0,0);

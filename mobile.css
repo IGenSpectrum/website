@@ -24,7 +24,7 @@ html{
 }
 
 body {
-  position: fixed;
+  position: sticky;
 
   margin: 0;
   padding: 0;
