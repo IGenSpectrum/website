@@ -221,7 +221,8 @@ main {
   width:100%;
   box-sizing: border-box;
 
-  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
   z-index: 2;
   color: var(--title-text);
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
@@ -231,7 +232,8 @@ main {
   position:absolute;
   top:0;
   left:0;
-  padding:20px;
+  padding:10px;
+  padding-left: 20px;
   display: flex;
   justify-content: flex-end;
 }
@@ -251,8 +253,8 @@ main {
 #logo {
   margin: 0;
   padding: 0;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 
   width:100%;
 
@@ -263,13 +265,12 @@ main {
   order:2;
   font-size: 27px;
   font-weight: 200;
+  flex-grow: 0;
 }
 
-#logo .name {
+#name {
     padding: 0;
     margin:0;
-    padding-left: 10px;
-    padding-right: 10px;
     font-family: var(--body-font);
   }
 
@@ -286,18 +287,14 @@ nav {
   margin:0;
   padding: 0;
   width:100%;
-  display: flex;
-  flex-direction: column;
   order:3;
 }
 
 #menu {
-  position:absolute;
   margin:0;
   padding: 0;
   padding-bottom: 10px;
   width: 100%;
-  flex-grow: 2;
   display: None;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -325,17 +322,12 @@ nav {
   margin: 10px;
   margin-bottom: 0;
   padding: 0;
-
-  background: None;
-  border-radius: 13px;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
-  background-color: var(--button-bg);
 }
 
 .mouse-listener {
-    margin:0;
-    padding:0;
-    flex: 1;
+  margin:0;
+  padding:0;
+  height: 100vh;
 }
 
 /* || CALDENDAR */
