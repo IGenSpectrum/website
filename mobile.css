@@ -1,6 +1,9 @@
 /* || General styles and variables */
 
 html{
+  height: 100%;
+  overflow: hidden;
+
   --fallback-bg: #ffffffA0;
   --button-bg: #ffffff50;
 
@@ -23,10 +26,22 @@ body {
   margin: 0;
   padding: 0;
 
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 
-  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  perspective: 1px;
+  perspective-origin: center 20%;
+
+  background:
+  radial-gradient(circle at 40vw 40vh,rgba(var(--g2),0.5) 0,rgba(var(--g2),0) 37vw),
+  radial-gradient(circle at 60vw 25vh,rgb(var(--g1),0.5) 0,rgba(var(--g1),0) 32vw),
+  radial-gradient(circle at 52vw 65vh,rgb(var(--g3),0.5) 0,rgba(var(--g3),0) 35vw),
+  linear-gradient(var(--body-bg),var(--body-bg-2)),
+  var(--body-bg-2);
+  background-attachment: local;
+
   font-family: var(--body-font);
   font-weight: 200;
 }
@@ -104,10 +119,7 @@ button {
 /* || UTILITIES */
 
 .parallax-container {
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  perspective: 1px;
-  perspective-origin: center 20%;
+  -webkit-transform-style: preserve-3d;
 }
 
 .parallax-back {
@@ -137,9 +149,7 @@ button {
 /* || SITEWIDE */
 
 main {
-  position:absolute;
-  top:0;
-  left:0;
+  position:relative;
 
   margin: 0;
   padding:0;
@@ -154,14 +164,7 @@ main {
   align-items: center;
   -webkit-text-size-adjust: none;
   color: var(--body-text);
-  background:
-  radial-gradient(circle at 30vw 40vh,rgba(var(--g2),0.4) 0,rgba(var(--g2),0) 60vw),
-  radial-gradient(circle at 70vw 25vh,rgb(var(--g1),0.4) 0,rgba(var(--g1),0) 60vw),
-  radial-gradient(circle at 52vw 65vh,rgb(var(--g3),0.4) 0,rgba(var(--g3),0) 80vw),
-  linear-gradient(var(--body-bg),var(--body-bg-2)),
-  var(--body-bg-2);
-  background-attachment: local;
-  overflow-x:hidden;
+  overflow-y: visible;
 }
 
 .content {
@@ -213,7 +216,7 @@ main {
 /* || HEADER + NAVIGATION */
 
 #site-header {
-  position:relative;
+  position:sticky;
   top:0;
 
   margin: 0;
