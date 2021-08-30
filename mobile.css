@@ -233,8 +233,7 @@ main {
   position:absolute;
   top:0;
   left:0;
-  padding:10px;
-  padding-left: 20px;
+  padding:20px;
   display: flex;
   justify-content: flex-end;
 }
@@ -254,8 +253,8 @@ main {
 #logo {
   margin: 0;
   padding: 0;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 
   width:100%;
 
